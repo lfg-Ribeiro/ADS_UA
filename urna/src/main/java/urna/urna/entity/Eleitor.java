@@ -1,35 +1,30 @@
 package urna.urna.entity;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+import java.io.Serializable;
 
 @Entity
-public class Eleitor {
+public class Eleitor implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Nome completo é obrigatório")
     private String nomeCompleto;
-
     private String cpf;
-
-    @NotNull(message = "Profissão é obrigatória")
     private String profissao;
-
-    @NotNull(message = "Telefone celular é obrigatório")
-    @Pattern(regexp = "\\(\\d{2}\\) \\d{5}-\\d{4}", message = "Telefone celular inválido")
     private String telefoneCelular;
-
     private String telefoneFixo;
-
-    @Email(message = "E-mail inválido")
     private String email;
 
-    private String status;
+    @Transient
+    private String status; // Não persistido, calculado pelo sistema
 
-    // Getters and Setters
+    // Getters e Setters
 
     public Long getId() {
         return id;
