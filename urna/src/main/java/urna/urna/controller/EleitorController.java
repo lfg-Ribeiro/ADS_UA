@@ -40,7 +40,7 @@ public class EleitorController {
         if (existingEleitor == null) {
             return ResponseEntity.notFound().build();
         }
-        eleitor.setId(id);  // Ensure the ID is set for the update
+        eleitor.setId(id);  // Garante que o ID esteja definido para a atualização
         Eleitor updatedEleitor = eleitorService.save(eleitor);
         return ResponseEntity.ok(updatedEleitor);
     }

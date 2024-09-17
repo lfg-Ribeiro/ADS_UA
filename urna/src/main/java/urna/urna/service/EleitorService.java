@@ -22,7 +22,20 @@ public class EleitorService {
     }
 
     public Eleitor save(Eleitor eleitor) {
+        // Defina as regras para processar o status do eleitor
+        if (isEleitorApto(eleitor)) {
+            eleitor.setStatus("APTO");
+        } else {
+            eleitor.setStatus("INAPTO");
+        }
         return eleitorRepository.save(eleitor);
+    }
+
+    private boolean isEleitorApto(Eleitor eleitor) {
+        // Exemplo de regra: se todos os campos obrigatórios estão preenchidos
+        return eleitor.getNomeCompleto() != null &&
+                eleitor.getProfissao() != null &&
+                eleitor.getTelefoneCelular() != null;
     }
 
     public void deleteById(Long id) {
