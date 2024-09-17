@@ -21,6 +21,10 @@ public class CandidatoService {
         return candidatoRepository.findById(id).orElse(null);
     }
 
+    public List<Candidato> findByFuncao(int funcao) {
+        return candidatoRepository.findByFuncao(funcao);
+    }
+
     public Candidato save(Candidato candidato) {
         return candidatoRepository.save(candidato);
     }
