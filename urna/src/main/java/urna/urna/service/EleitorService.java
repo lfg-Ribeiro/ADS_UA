@@ -14,6 +14,7 @@ public class EleitorService {
     private EleitorRepository eleitorRepository;
 
     public List<Eleitor> findAll() {
+        // Listar somente eleitores ativos e pendentes
         return eleitorRepository.findAllByStatusIn(List.of("APTO", "PENDENTE"));
     }
 
@@ -22,7 +23,6 @@ public class EleitorService {
     }
 
     public Eleitor save(Eleitor eleitor) {
-        // Define o status do eleitor antes de salvar
         eleitor.setStatus(determineStatus(eleitor));
         return eleitorRepository.save(eleitor);
     }
@@ -53,14 +53,17 @@ public class EleitorService {
     }
 
     private String determineStatus(Eleitor eleitor) {
-        if (eleitor.getNomeCompleto() == null || eleitor.getTelefoneCelular() == null || eleitor.getCpf() == null || eleitor.getEmail() == null) {
+        if (eleitor.getNomeCompleto() == null || eleitor.getTelefoneCelular() == null) {
             return "PENDENTE";
         }
-        if ("PENDENTE".equals(eleitor.getStatus())) {
+        if (eleitor.getCpf() == null || eleitor.getEmail() == null) {
             return "PENDENTE";
         }
-        if ("INATIVO".equals(eleitor.getStatus())) {
-            return "INATIVO";
+        if ("BLOQUEADO".equals(eleitor.getStatus())) {
+            return "BLOQUEADO";
+        }
+        if ("VOTOU".equals(eleitor.getStatus())) {
+            return "VOTOU";
         }
         return "APTO";
     }
