@@ -2,8 +2,19 @@ package com.dua.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.util.List;
 
+import org.hibernate.validator.constraints.br.CPF;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "participantes")
 @Data
@@ -13,19 +24,21 @@ public class Participante {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @NotNull
     private String nome;
 
-    @Column(nullable = false)
+    //@CPF
     private String cpf;
 
-    @ManyToMany(mappedBy = "participantes")
-    private List<Equipe> equipes;
+    private Integer idade;
 
-    public Participante() {}
+    private String telefone;
+    
+    //@ManyToMany(mappedBy = "participantes")//um participante pode estar em varias provas
+    //private List<Prova> provas;
 
-    public Participante(String nome, String cpf) {
-        this.nome = nome;
-        this.cpf = cpf;
-    }
+    @ManyToOne
+    @JoinColumn(name = "equipe_id")//chave estrangeira pra equipe
+    private Equipe equipe;
+
 }
