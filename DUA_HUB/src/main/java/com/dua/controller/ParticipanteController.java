@@ -45,17 +45,17 @@ public class ParticipanteController {
 		}
 	}
 
-	@DeleteMapping
-	public ResponseEntity<String> delete(Participante participante,@PathVariable Long id) {
-		try {
-			String message = this.participanteService.delete(id);
-			return new ResponseEntity<>(message, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-		}	
-	}
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
+        try {
+            String message = this.participanteService.delete(id);
+            return new ResponseEntity<>(message, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+    }
 
-	@GetMapping
+    @GetMapping
 	public ResponseEntity<List<Participante>> findAll(){
 		try {
 			List<Participante> list = this.participanteService.findAll();

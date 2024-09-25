@@ -18,17 +18,25 @@ public class ParticipanteService {
 		this.participanteRepository.save(participante);
 		return "Participante salvo com sucesso!";
 	}
-	
-	public String update(Participante participante, Long id) {
-		participante.setId(id);
-		this.participanteRepository.save(participante);
-		return "Participante atualizado com sucesso";
-	}
-	
-	public String delete(Long id) {
-		this.participanteRepository.deleteById(id);
-		return "Participante deletado com sucesso";
-	}
+
+    public String update(Participante participante, Long id) {
+        if (participanteRepository.existsById(id)) {
+            participante.setId(id);
+            participanteRepository.save(participante);
+            return "Participante atualizado com sucesso!";
+        } else {
+            return "Participante não encontrado!";
+        }
+    }
+
+    public String delete(Long id) {
+        if (participanteRepository.existsById(id)) {
+            participanteRepository.deleteById(id);
+            return "Participante deletado com sucesso!";
+        } else {
+            return "Participante não encontrado!";
+        }
+    }
 	
 	public List<Participante> findAll(){
 		List<Participante> list = this.participanteRepository.findAll();
@@ -39,5 +47,4 @@ public class ParticipanteService {
 		Participante participante = this.participanteRepository.findById(id).get();
 		return participante;
 	}
-	
 }
