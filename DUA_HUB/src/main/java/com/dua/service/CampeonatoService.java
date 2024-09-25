@@ -23,7 +23,6 @@ public class CampeonatoService {
     }
 
     public Campeonato update(Campeonato campeonato, Long id) {
-        campeonato.setId(id);
         return campeonatoRepository.save(campeonato);
     }
 

@@ -1,18 +1,17 @@
 package com.dua.entity;
-import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "campeonatos")
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Campeonato {
 
 	    @Id
@@ -25,11 +24,4 @@ public class Campeonato {
 	    @OneToMany
 	    @JoinColumn(name = "campeonato_id") // chave estrangeira para as provas
 	    private List<Prova> provas; // Relacionamento com a entidade Prova
-
-		public void setId(Long id2) {
-			
-		}
-
-	}
-
-
+}
