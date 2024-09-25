@@ -1,7 +1,7 @@
-package inscricao.service;
+package com.dua.service;
 
-import inscricao.entity.Inscricao;
-import inscricao.repository.InscricaoRepository;
+import com.dua.entity.Inscricao;
+import com.dua.repository.InscricaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

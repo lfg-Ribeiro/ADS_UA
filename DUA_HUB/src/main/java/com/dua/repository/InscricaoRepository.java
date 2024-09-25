@@ -1,6 +1,6 @@
-package inscricao.repository;
+package com.dua.repository;
 
-import inscricao.entity.Inscricao;
+import com.dua.entity.Inscricao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

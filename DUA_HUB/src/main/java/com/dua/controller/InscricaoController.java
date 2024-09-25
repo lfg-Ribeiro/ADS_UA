@@ -1,7 +1,7 @@
-package inscricao.controller;
+package com.dua.controller;
 
-import inscricao.entity.Inscricao;
-import inscricao.service.InscricaoService;
+import com.dua.entity.Inscricao;
+import com.dua.service.InscricaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

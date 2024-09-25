@@ -1,30 +1,27 @@
-package inscricao.entity;
+package com.dua.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Data;
+import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "inscricoes")
+@Data
 public class Inscricao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // Identificador único da inscrição
 
-    // Construtores, getters e setters
-    public Inscricao() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "participante_id", nullable = false)
+    private Participante participante; // Referência ao participante inscrito
 
-    public Inscricao(Long id) {
-        this.id = id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "prova_id", nullable = false)
+    private Prova prova; // Referência à prova na qual o participante está inscrito
 
-    public Long getId() {
-        return id;
-    }
+    private LocalDateTime dataInscricao; // Data e hora da inscrição
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private String status; // Status da inscrição (ex.: confirmada, pendente)
 }
