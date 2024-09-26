@@ -17,22 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dua.entity.Participante;
 import com.dua.service.ParticipanteService;
 
-@RequestMapping("/participante")
-@RestController
-public class ParticipanteController {
+    @RequestMapping("/participante")
+    @RestController
+    public class ParticipanteController {
 
-	@Autowired
-	public ParticipanteService participanteService;
+        @Autowired
+        public ParticipanteService participanteService;
 
-	@PostMapping
-	public ResponseEntity<String> save(@RequestBody Participante participante) {
-		try {
-			String message = this.participanteService.save(participante);
-			return new ResponseEntity<>(message, HttpStatus.OK);
-		} catch (Exception e) {
-			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
-		}
-	}
+        @PostMapping
+        public ResponseEntity<String> save(@RequestBody Participante participante) {
+            try {
+                String message = this.participanteService.save(participante);
+                return new ResponseEntity<>(message, HttpStatus.OK);
+            } catch (Exception e) {
+                return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+            }
+        }
 
 	@PutMapping("/{id}")
 	public ResponseEntity<String> update(@RequestBody Participante participante,@PathVariable Long id) {

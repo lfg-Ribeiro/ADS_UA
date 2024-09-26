@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "provas")
@@ -26,5 +27,13 @@ public class Prova {
 
     @Column(nullable = false)
     private String local;
+
+    @ManyToMany
+    @JoinTable(
+            name = "prova_participante", // Nome da tabela de junção
+            joinColumns = @JoinColumn(name = "prova_id"),
+            inverseJoinColumns = @JoinColumn(name = "participante_id")
+    )
+    private List<Participante> participantes; // Participantes inscritos na prova
 
 }
