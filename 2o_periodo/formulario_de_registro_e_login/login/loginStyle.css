@@ -1,3 +1,4 @@
+/* Reseta estilos básicos para garantir consistência entre navegadores */
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +6,12 @@
     box-sizing: border-box;
 }
 
+/* Estilo de fundo da página */
 body {
     background: #333333;
 }
 
+/* Estilo para textos gerais na página */
 .text {
     padding-bottom: 2vh;
     align-items: flex-start;
@@ -30,6 +33,7 @@ body {
     align-items: center;
 }
 
+/* Estilo para os campos de entrada */
 input {
     width: 50vw;
     max-width: 15em;
@@ -82,6 +86,7 @@ input {
     padding-top: 1vh;
 }
 
+/* Estilo responsivo para telas maiores */
 @media (min-width: 425px) {
     .input {
         max-width: 30em;
