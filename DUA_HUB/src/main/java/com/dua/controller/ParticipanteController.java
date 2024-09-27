@@ -75,4 +75,14 @@ import com.dua.service.ParticipanteService;
 		}
 	}
 
-}
+        @DeleteMapping("/all")
+        public ResponseEntity<String> deleteAll() {
+            try {
+                participanteService.deleteAll();
+                return new ResponseEntity<>("Todos os participantes foram deletados com sucesso!", HttpStatus.OK);
+            } catch (Exception e) {
+                return new ResponseEntity<>("Erro ao deletar participantes", HttpStatus.BAD_REQUEST);
+            }
+        }
+
+    }

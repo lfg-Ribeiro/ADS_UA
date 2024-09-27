@@ -16,7 +16,4 @@ public class Equipe {
 	@Column(nullable = false)
 	private String nome;
 
-	// Relacionamento bidirecional com Participante
-	@OneToMany(mappedBy = "equipe", cascade = CascadeType.ALL) // Cascade opcional, para salvar/deletar participantes junto com a equipe
-	private List<Participante> participantes;
 }

@@ -47,4 +47,9 @@ public class ParticipanteService {
 		Participante participante = this.participanteRepository.findById(id).get();
 		return participante;
 	}
+
+    public void deleteAll() {
+        participanteRepository.deleteAll();
+    }
+
 }

@@ -3,8 +3,6 @@ package com.dua.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import jakarta.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.br.CPF;
-import java.util.List;
 
 @Data
 @Entity
@@ -18,18 +16,9 @@ public class Participante {
     @NotNull
     private String nome;
 
-    @CPF
-    private String cpf;
+    private String matricula;
 
-    private Integer idade;
+    private String curso;
 
     private String telefone;
-    
-    @ManyToMany(mappedBy = "participantes") //um participante pode estar em varias provas
-    private List<Prova> provas;
-
-    @ManyToOne
-    @JoinColumn(name = "equipe_id") //chave estrangeira pra equipe
-    private Equipe equipe;
-
 }
