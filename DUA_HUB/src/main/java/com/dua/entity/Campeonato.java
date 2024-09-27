@@ -22,6 +22,6 @@ public class Campeonato {
 	    private String nome;
 
 	    @OneToMany
-	    @JoinColumn(name = "campeonato_id") // chave estrangeira para as provas
-	    private List<Prova> provas; // Relacionamento com a entidade Prova
+	    @JoinColumn(name = "campeonato_id")
+	    private List<Prova> provas;
 }

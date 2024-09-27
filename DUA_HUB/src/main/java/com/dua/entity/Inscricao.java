@@ -11,17 +11,17 @@ public class Inscricao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Identificador único da inscrição
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "participante_id", nullable = false)
-    private Participante participante; // Referência ao participante inscrito
+    private Participante participante;
 
     @ManyToOne
     @JoinColumn(name = "prova_id", nullable = false)
-    private Prova prova; // Referência à prova na qual o participante está inscrito
+    private Prova prova;
 
-    private LocalDateTime dataInscricao; // Data e hora da inscrição
+    private LocalDateTime dataInscricao;
 
-    private String status; // Status da inscrição (ex.: confirmada, pendente)
+    private String status;
 }

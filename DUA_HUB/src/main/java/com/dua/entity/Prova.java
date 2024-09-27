@@ -30,10 +30,10 @@ public class Prova {
 
     @ManyToMany
     @JoinTable(
-            name = "prova_participante", // Nome da tabela de junção
+            name = "prova_participante",
             joinColumns = @JoinColumn(name = "prova_id"),
             inverseJoinColumns = @JoinColumn(name = "participante_id")
     )
-    private List<Participante> participantes; // Participantes inscritos na prova
+    private List<Participante> participantes;
 
 }
