@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <script src="./registerScript.js" defer></script>
+    <link rel="stylesheet" href="./registerStyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Registro</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../images/login.png" alt="Imagem de login" class="login_png">
+        <section>
+            <div class="register">
+                <input type="text" name="user" id="user" placeholder="Usuário" class="input">
+                <input type="password" name="pass" id="pass" placeholder="Senha" class="input">
+                <input type="password" name="passConfirm" id="passConfirm" placeholder="Confirmar senha" class="input">
+                
+                <!-- Espaço para exibir mensagens de erro -->
+                <p id="error-message" class="error-message"></p>
+
+                <button onclick="register(this.parentNode)" class="botao">Registrar</button>
+                <a href="../login/login.html" class="text-login">Já tem uma conta?</a>
+            </div>
+        </section>
+    </div>  
+</body>
+
+</html>
