@@ -1,3 +1,4 @@
+/* Reseta estilos básicos para garantir consistência */
 * {
     margin: 0;
     padding: 0;
@@ -5,14 +6,16 @@
     box-sizing: border-box;
 }
 
+/* Estilo de fundo da página - Azul Claro */
 body {
-    background: #333333;
+    background: #ADD8E6;
 }
 
 .imageHeader {
     width: 10vh;
 }
 
+/* Estilo do cabeçalho com espaçamento entre os itens */
 .header {
     display: flex;
     justify-content: space-between;
@@ -20,10 +23,18 @@ body {
     align-items: center;
 }
 
+/* Estilo dos botões no cabeçalho */
 .buttonHeader {
     width: 10vh;
     padding: 0.5vw;
     border-radius: 10vw;
     cursor: pointer;
     margin: 0.5vw;
+    background-color: #003366;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.buttonHeader:hover {
+    background-color: #002244;
 }

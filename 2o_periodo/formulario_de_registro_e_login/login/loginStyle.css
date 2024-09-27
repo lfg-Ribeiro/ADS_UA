@@ -6,18 +6,17 @@
     box-sizing: border-box;
 }
 
-/* Estilo de fundo da página */
+/* Estilo de fundo da página - Azul Claro */
 body {
-    background: #333333;
+    background: #ADD8E6;
 }
 
 /* Estilo para textos gerais na página */
 .text {
     padding-bottom: 2vh;
     align-items: flex-start;
-    color: white;
-    padding-top: 5vh';
-
+    color: #003366;
+    padding-top: 5vh;
 }
 
 .register {
@@ -41,9 +40,9 @@ input {
     border-radius: 10vh;
     height: 4vh;
     min-height: 30px;
-    background-color: #545454;
+    background-color: #E0FFFF;
     text-align: center;
-    color: white;
+    color: #003366;
 }
 
 .label {
@@ -52,20 +51,23 @@ input {
     align-items: flex-start;
 }
 
+/* Botão estilizado em Azul Marinho */
 .botao {
     margin-top: 6vh;
     width: 50vw;
     max-width: 15em;
-    background: white;
+    background: #003366;
     border-radius: 10vh;
     height: 5vh;
     min-height: 35px;
+    color: #ffffff;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 .botao:hover {
     transform: translateY(-10px);
+    background: #002244;
 }
 
 .login_png {
@@ -77,12 +79,12 @@ input {
 
 .input::placeholder {
     text-align: center;
-    color: white;
+    color: #003366;
     opacity: 0.8;
 }
 
 .text-login {
-    color: white;
+    color: #003366;
     padding-top: 1vh;
 }
 

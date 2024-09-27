@@ -6,16 +6,16 @@
     box-sizing: border-box;
 }
 
-/* Estilo de fundo da página */
+/* Estilo de fundo da página - Azul Claro */
 body {
-    background: #333333;
+    background: #ADD8E6;
 }
 
 /* Estilo para textos gerais na página */
 .text {
     padding-bottom: 2vh;
     align-items: flex-start;
-    color: white;
+    color: #003366;
     padding-top: 5vh;
 }
 
@@ -34,7 +34,7 @@ body {
     align-items: center;
 }
 
-/* Estilo dos inputs e feedback de erro */
+/* Estilo dos inputs */
 input {
     width: 50vw;
     max-width: 15em;
@@ -42,22 +42,23 @@ input {
     border-radius: 10vh;
     height: 4vh;
     min-height: 30px;
-    background-color: #545454;
+    background-color: #E0FFFF;
     text-align: center;
-    color: white; 
-    transition: border 0.3s ease; 
+    color: #003366;
+    transition: border 0.3s ease;
 }
 
-
+/* Estilo dos inputs com erro */
 input.error {
-    border: 2px solid red; /* Borda vermelha para indicar erro */
+    border: 2px solid red;
 }
 
 /* Estilo da mensagem de erro */
 .error-message {
     color: red;
-    font-size: 0.9em; 
+    font-size: 0.9em;
     padding-top: 1vh;
+    text-align: center;
     display: none;
 }
 
@@ -67,24 +68,25 @@ input.error {
     align-items: flex-start;
 }
 
-/* Estilo do botão de registro */
+/* Botão estilizado */
 .botao {
-    margin-top: 6vh; 
-    width: 50vw; 
-    max-width: 15em; 
-    background: white; 
-    border-radius: 10vh; 
-    height: 5vh; 
-    min-height: 35px; 
-    cursor: pointer; 
-    transition: transform 0.3s ease; 
+    margin-top: 6vh;
+    width: 50vw;
+    max-width: 15em;
+    background: #003366;
+    border-radius: 10vh;
+    height: 5vh;
+    min-height: 35px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .botao:hover {
     transform: translateY(-10px);
+    background: #002244;
 }
 
-/* Estilo da imagem de login */
 .login_png {
     padding-top: 10vh;
     padding-bottom: 5vh;
@@ -92,16 +94,14 @@ input.error {
     max-width: 200px;
 }
 
-
 .input::placeholder {
     text-align: center;
-    color: white;
-    opacity: 0.8; 
+    color: #003366;
+    opacity: 0.8;
 }
 
-/* Estilo da tela de login */
 .text-login {
-    color: white;
+    color: #003366;
     padding-top: 1vh;
 }
 
