@@ -1,3 +1,4 @@
+/* Reseta estilos básicos para garantir consistência */
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +6,12 @@
     box-sizing: border-box;
 }
 
+/* Estilo de fundo da página */
 body {
     background: #333333;
 }
 
+/* Estilo para textos gerais na página */
 .text {
     padding-bottom: 2vh;
     align-items: flex-start;
@@ -16,6 +19,7 @@ body {
     padding-top: 5vh;
 }
 
+/* Estilo da tela de registro */
 .register {
     display: flex;
     flex-direction: column;
@@ -23,6 +27,7 @@ body {
     width: 60vw;
 }
 
+/* Estilo da tela principal */
 .container {
     display: flex;
     flex-direction: column;
@@ -39,21 +44,20 @@ input {
     min-height: 30px;
     background-color: #545454;
     text-align: center;
-    color: white;
-    transition: border 0.3s ease;
+    color: white; 
+    transition: border 0.3s ease; 
 }
 
-/* Borda vermelha para inputs com erro */
+
 input.error {
-    border: 2px solid red;
+    border: 2px solid red; /* Borda vermelha para indicar erro */
 }
 
 /* Estilo da mensagem de erro */
 .error-message {
     color: red;
-    font-size: 0.9em;
+    font-size: 0.9em; 
     padding-top: 1vh;
-    text-align: center;
     display: none;
 }
 
@@ -63,22 +67,24 @@ input.error {
     align-items: flex-start;
 }
 
+/* Estilo do botão de registro */
 .botao {
-    margin-top: 6vh;
-    width: 50vw;
-    max-width: 15em;
-    background: white;
-    border-radius: 10vh;
-    height: 5vh;
-    min-height: 35px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    margin-top: 6vh; 
+    width: 50vw; 
+    max-width: 15em; 
+    background: white; 
+    border-radius: 10vh; 
+    height: 5vh; 
+    min-height: 35px; 
+    cursor: pointer; 
+    transition: transform 0.3s ease; 
 }
 
 .botao:hover {
     transform: translateY(-10px);
 }
 
+/* Estilo da imagem de login */
 .login_png {
     padding-top: 10vh;
     padding-bottom: 5vh;
@@ -86,17 +92,20 @@ input.error {
     max-width: 200px;
 }
 
+
 .input::placeholder {
     text-align: center;
     color: white;
-    opacity: 0.8;
+    opacity: 0.8; 
 }
 
+/* Estilo da tela de login */
 .text-login {
     color: white;
     padding-top: 1vh;
 }
 
+/* Estilo responsivo para telas maiores */
 @media (min-width: 425px) {
     .input {
         max-width: 30em;

@@ -11,17 +11,21 @@
 
 <body>
     <div class="container">
+        <!-- Imagem de cabeçalho para a tela de registro -->
         <img src="../images/login.png" alt="Imagem de login" class="login_png">
         <section>
             <div class="register">
+                <!-- Campos de entrada para o usuário inserir informações -->
                 <input type="text" name="user" id="user" placeholder="Usuário" class="input">
                 <input type="password" name="pass" id="pass" placeholder="Senha" class="input">
                 <input type="password" name="passConfirm" id="passConfirm" placeholder="Confirmar senha" class="input">
                 
-                <!-- Espaço para exibir mensagens de erro -->
+                <!-- Parágrafo para exibir mensagens de erro ao usuário -->
                 <p id="error-message" class="error-message"></p>
 
+                <!-- Botão para registrar o usuário -->
                 <button onclick="register(this.parentNode)" class="botao">Registrar</button>
+                <!-- Link para redirecionar para a página de login -->
                 <a href="../login/login.html" class="text-login">Já tem uma conta?</a>
             </div>
         </section>
