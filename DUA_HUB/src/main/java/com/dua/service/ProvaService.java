@@ -35,4 +35,18 @@ public class ProvaService {
             return "Prova não encontrada!";
         }
     }
+    
+    public List<Prova> findByNome(String nome){
+    	return this.provaRepository.findByNome(nome);
+    }
+    
+    public List<Prova> findByLocal(String local){
+    	return this.provaRepository.findByLocal(local);
+    }
+    
+    public List<Prova> findByParticipantes(Long idParticipante){
+    	Participante participante = new Participante();
+    	participante.setId(idParticipante);
+    	return this.provaRepository.findByParticipantes(participante);
+    }
 }

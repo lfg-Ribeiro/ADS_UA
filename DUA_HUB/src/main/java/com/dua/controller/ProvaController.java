@@ -5,6 +5,7 @@ import com.dua.entity.Prova;
 import com.dua.service.ProvaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,4 +43,34 @@ public class ProvaController {
 			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 		}
 	}
+    
+    @GetMapping("/findByNome")
+    public ResponseEntity<List<Prova>> findByNome(@RequestParam String nome){
+    	try {
+			List<Prova> list = this.provaService.findByNome(nome);
+    		return new ResponseEntity<>(list, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+		}
+    }
+    
+    @GetMapping("/findByLocal")
+    public ResponseEntity<List<Prova>> findByLocal(@RequestParam String local){
+    	try {
+    		List<Prova> list = this.provaService.findByLocal(local);
+			return new ResponseEntity<>(list, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+		}
+    }
+    
+    @GetMapping("/findByParticipante")
+    public ResponseEntity<List<Prova>> findByParticipantes(@RequestParam Long idParticipante){
+    	try {
+    		List<Prova> list = this.provaService.findByParticipantes(idParticipante);
+			return new ResponseEntity<>(list, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+		}
+    }
 }
