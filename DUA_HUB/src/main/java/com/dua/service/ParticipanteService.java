@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.dua.entity.Participante;
 import com.dua.repository.ParticipanteRepository;
 
+import jakarta.servlet.http.Part;
+
 @Service
 public class ParticipanteService {
 
@@ -51,5 +53,19 @@ public class ParticipanteService {
     public void deleteAll() {
         participanteRepository.deleteAll();
     }
+    
+    public List<Participante> findByNome(String nome){
+    	return this.participanteRepository.findByNome(nome);
+    	
+    }
+    
+    public List<Participante> findByMatricula(String matricula){
+    	return this.participanteRepository.findByMatricula(matricula);
+    }
+    
+    public List<Participante> findByCurso(String curso){
+    	return this.participanteRepository.findByCurso(curso);
+    }
+    
 
 }

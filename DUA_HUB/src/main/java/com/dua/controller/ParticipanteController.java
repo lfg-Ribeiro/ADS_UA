@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dua.entity.Participante;
@@ -85,4 +86,34 @@ import com.dua.service.ParticipanteService;
             }
         }
 
+        @GetMapping("/findByNome")
+        public ResponseEntity<List<Participante>> findByNome(@RequestParam String nome){
+        	try {
+				List<Participante> list = this.participanteService.findByNome(nome);
+				return new ResponseEntity<>(list, HttpStatus.OK);
+			} catch (Exception e) {
+				return new ResponseEntity<>(null , HttpStatus.BAD_REQUEST);
+			}
+        }
+        
+        @GetMapping("/findByMatricula")
+        public ResponseEntity<List<Participante>> findByMatricula(@RequestParam String matricula){
+        	try {
+        		List<Participante> list = this.participanteService.findByMatricula(matricula);
+				return new ResponseEntity<>(list, HttpStatus.OK);
+			} catch (Exception e) {
+				return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+			}
+        }
+        
+        @GetMapping("/findByCurso")
+        public ResponseEntity<List<Participante>> findByCurso(@RequestParam String curso){
+        	try {
+        		List<Participante> list = this.participanteService.findByCurso(curso);
+        		return new ResponseEntity<>(list, HttpStatus.OK);
+				
+			} catch (Exception e) {
+				return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+			}
+        }
     }
