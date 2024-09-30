@@ -1,6 +1,6 @@
 # ADS_UA
 
-Repositório destinado ao armazenamento dos projetos desenvolvidos ao longo do curso de Análise e Desenvolvimento de Sistemas (ADS) na UniAmérica. Este projeto serve como um arquivo de atividades, permitindo que alunos e professores acessem facilmente o material produzido em cada semestre.
+Repositório destinado ao armazenamento dos projetos desenvolvidos ao longo do curso de Análise e Desenvolvimento de Sistemas (ADS) na UniAmérica.
 
 ## Índice
 
@@ -12,7 +12,7 @@ Repositório destinado ao armazenamento dos projetos desenvolvidos ao longo do c
 
 ## Descrição do Projeto
 
-Este repositório é uma coleção organizada de projetos realizados durante os períodos do curso. Cada pasta representa um semestre específico e contém os respectivos projetos desenvolvidos, permitindo uma fácil navegação e consulta dos trabalhos acadêmicos.
+Este repositório é uma coleção organizada de projetos realizados durante os períodos do curso. Cada pasta representa um semestre específico e contém os respectivos projetos desenvolvidos, permitindo uma fácil navegação e consulta dos projetos acadêmicos.
 
 ## Estrutura do Repositório
 
@@ -48,9 +48,9 @@ As tecnologias utilizadas em cada período são as seguintes:
   - ![NetBeans IDE](https://img.shields.io/badge/NetBeansIDE-1B6AC6.svg?style=for-the-badge&logo=apache-netbeans-ide&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
 - **4º Período:**
-  - **Tecnologias:** Java com Spring Boot, Angular, Mockito, JaCoCo, JUnit
+  - **Tecnologias:** Java, Spring, Angular, Mockito, JaCoCo, JUnit
   - **IDE:** IntelliJ e Spring Tool Suite (STS)
-  - ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white) ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+  - ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)  ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
 
 - **5º Período:**
   - **Tecnologias:** Redes (ainda não cursado)
