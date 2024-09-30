@@ -2,18 +2,20 @@ package com.dua.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import java.util.List;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
 @Table(name = "equipes")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Equipe {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Column(nullable = false)
-	private String nome;
-
+    @Column(nullable = false)
+    private String nome;
 }
