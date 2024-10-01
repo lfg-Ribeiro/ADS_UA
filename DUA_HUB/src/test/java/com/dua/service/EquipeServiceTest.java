@@ -29,15 +29,15 @@ class EquipeServiceTest {
 
     @Test
     void testSaveEquipe() {
-        // Dado
+        // dado isso
         Equipe equipe = new Equipe();
         equipe.setNome("Time A");
         when(equipeRepository.save(any(Equipe.class))).thenReturn(equipe);
 
-        // Quando
+        // quando
         Equipe resultado = equipeService.save(equipe);
 
-        // Então
+        // entao =
         assertNotNull(resultado);
         assertEquals("Time A", resultado.getNome());
         verify(equipeRepository, times(1)).save(equipe);
@@ -45,15 +45,15 @@ class EquipeServiceTest {
 
     @Test
     void testFindAllEquipes() {
-        // Dado
+        // dado isso
         Equipe equipe = new Equipe();
         equipe.setNome("Time A");
         when(equipeRepository.findAll()).thenReturn(Collections.singletonList(equipe));
 
-        // Quando
+        // quando
         List<Equipe> equipes = equipeService.findAll();
 
-        // Então
+        // entao =
         assertNotNull(equipes);
         assertEquals(1, equipes.size());
         assertEquals("Time A", equipes.get(0).getNome());

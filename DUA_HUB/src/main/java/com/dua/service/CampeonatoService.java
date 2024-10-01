@@ -33,4 +33,8 @@ public class CampeonatoService {
     public Campeonato findById(Long id) {
         return campeonatoRepository.findById(id).orElse(null);
     }
+
+    public List<Campeonato> findByNome(String nome) {
+        return campeonatoRepository.findByNome(nome);
+    }
 }

@@ -73,4 +73,14 @@ public class CampeonatoController {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/nome/{nome}")
+    public ResponseEntity<List<Campeonato>> getCampeonatosByNome(@PathVariable String nome) {
+        try {
+            List<Campeonato> campeonatos = campeonatoService.findByNome(nome);
+            return new ResponseEntity<>(campeonatos, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+    }
 }
