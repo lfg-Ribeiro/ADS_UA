@@ -1,7 +1,6 @@
 package app.cars.controller;
 
 import app.cars.entity.Accessory;
-import app.cars.entity.Brand;
 import app.cars.service.AccessoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

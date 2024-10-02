@@ -19,13 +19,11 @@ public class CarService {
     }
 
     public List<Car> findAll() {
-        List<Car> cars = carRepository.findAll();
-        return cars;
+        return carRepository.findAll();
     }
 
     public Car findById(Long id) {
-        Car car = carRepository.findById(id).get();
-        return car;
+        return carRepository.findById(id).get();
     }
 
     public String update(Long id, Car car) {

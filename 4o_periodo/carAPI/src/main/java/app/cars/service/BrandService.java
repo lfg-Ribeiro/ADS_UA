@@ -18,13 +18,11 @@ public class BrandService {
     }
 
     public List<Brand> findAll() {
-        List<Brand> brands = brandRepository.findAll();
-        return brands;
+        return brandRepository.findAll();
     }
 
     public Brand findById(Long id) {
-        Brand brand = brandRepository.findById(id).get();
-        return brand;
+        return brandRepository.findById(id).get();
     }
 
     public String update(Long id, Brand brand) {

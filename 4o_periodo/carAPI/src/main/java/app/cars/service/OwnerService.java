@@ -18,13 +18,11 @@ public class OwnerService {
     }
 
     public List<Owner> findAll() {
-        List<Owner> owners = ownerRepository.findAll();
-        return owners;
+        return ownerRepository.findAll();
     }
 
     public Owner findById(Long id) {
-        Owner owner = ownerRepository.findById(id).get();
-        return owner;
+        return ownerRepository.findById(id).get();
     }
 
     public String update(Long id, Owner owner) {

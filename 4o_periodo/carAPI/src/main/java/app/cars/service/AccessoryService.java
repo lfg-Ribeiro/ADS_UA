@@ -18,13 +18,11 @@ public class AccessoryService {
     }
 
     public List<Accessory> findAll() {
-        List<Accessory> accessories = accessoryRepository.findAll();
-        return accessories;
+        return accessoryRepository.findAll();
     }
 
     public Accessory findById(Long id) {
-        Accessory accessory = accessoryRepository.findById(id).get();
-        return accessory;
+        return accessoryRepository.findById(id).get();
     }
 
     public String update(Long id, Accessory accessory) {
