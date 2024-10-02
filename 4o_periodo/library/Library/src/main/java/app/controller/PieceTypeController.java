@@ -20,7 +20,7 @@ public class PieceTypeController {
     public ResponseEntity<?> savePieceType(@Valid @RequestBody PieceType pieceType) {
         try {
             String message = this.pieceTypeService.savePieceType(pieceType);
-            return new ResponseEntity<String>(message, HttpStatus.CREATED);
+            return new ResponseEntity<>(message, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -30,7 +30,7 @@ public class PieceTypeController {
     public ResponseEntity<?> findAllPieceTypes() {
         try {
             List<PieceType> pieceTypes = this.pieceTypeService.findAllPieceTypes();
-            return new ResponseEntity<List<PieceType>>(pieceTypes, HttpStatus.OK);
+            return new ResponseEntity<>(pieceTypes, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -40,7 +40,7 @@ public class PieceTypeController {
     public ResponseEntity<?> findPieceTypeById(@PathVariable Long id) {
         try {
             PieceType pieceType = this.pieceTypeService.findPieceTypeById(id);
-            return new ResponseEntity<PieceType>(pieceType, HttpStatus.OK);
+            return new ResponseEntity<>(pieceType, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -50,7 +50,7 @@ public class PieceTypeController {
     public ResponseEntity<?> updatePieceType(@PathVariable Long id, @RequestBody PieceType pieceType) {
         try {
             String message = this.pieceTypeService.updatePieceType(id, pieceType);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -60,7 +60,7 @@ public class PieceTypeController {
     public ResponseEntity<?> deletePieceType(@PathVariable Long id) {
         try {
             String message = this.pieceTypeService.deletePieceType(id);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }

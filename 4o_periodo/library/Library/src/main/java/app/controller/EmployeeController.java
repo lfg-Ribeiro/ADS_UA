@@ -20,7 +20,7 @@ public class EmployeeController {
     public ResponseEntity<?> saveEmployee(@Valid @RequestBody Employee employee) {
         try {
             String message = this.employeeService.saveEmployee(employee);
-            return new ResponseEntity<String>(message, HttpStatus.CREATED);
+            return new ResponseEntity<>(message, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -30,7 +30,7 @@ public class EmployeeController {
     public ResponseEntity<?> findAllEmployees() {
         try {
             List<Employee> employees = this.employeeService.findAllEmployees();
-            return new ResponseEntity<List<Employee>>(employees, HttpStatus.OK);
+            return new ResponseEntity<>(employees, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -40,7 +40,7 @@ public class EmployeeController {
     public ResponseEntity<?> findEmployeeById(@PathVariable Long id) {
         try {
             Employee employee = this.employeeService.findEmployeeById(id);
-            return new ResponseEntity<Employee>(employee, HttpStatus.OK);
+            return new ResponseEntity<>(employee, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -50,7 +50,7 @@ public class EmployeeController {
     public ResponseEntity<?> updateEmployee(@Valid @PathVariable Long id, @Valid @RequestBody Employee employee) {
         try {
             String message = this.employeeService.updateEmployee(id, employee);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -60,7 +60,7 @@ public class EmployeeController {
     public ResponseEntity<?> deleteEmployee(@PathVariable Long id) {
         try {
             String message = this.employeeService.deleteEmployee(id);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }

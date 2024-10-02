@@ -20,7 +20,7 @@ public class ClientController {
     public ResponseEntity<?> saveClient(@Valid @RequestBody Client client) {
         try {
             String message = this.clientService.saveClient(client);
-            return new ResponseEntity<String>(message, HttpStatus.CREATED);
+            return new ResponseEntity<>(message, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -30,7 +30,7 @@ public class ClientController {
     public ResponseEntity<?> findAllClients() {
         try {
             List<Client> clients = this.clientService.findAllClients();
-            return new ResponseEntity<List<Client>>(clients, HttpStatus.OK);
+            return new ResponseEntity<>(clients, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -40,7 +40,7 @@ public class ClientController {
     public ResponseEntity<?> findClientById(@PathVariable Long id) {
         try {
             Client client = this.clientService.findClientById(id);
-            return new ResponseEntity<Client>(client, HttpStatus.OK);
+            return new ResponseEntity<>(client, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -50,7 +50,7 @@ public class ClientController {
     public ResponseEntity<?> updateClient(@Valid @PathVariable Long id, @Valid @RequestBody Client client) {
         try {
             String message = this.clientService.updateClient(id, client);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -60,7 +60,7 @@ public class ClientController {
     public ResponseEntity<?> deleteClient(@PathVariable Long id) {
         try {
             String message = this.clientService.deleteClient(id);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }

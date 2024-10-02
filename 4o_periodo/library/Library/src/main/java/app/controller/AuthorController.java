@@ -24,7 +24,7 @@ public class AuthorController {
     public ResponseEntity<?> saveAuthor(@Valid @RequestBody Author author) {
         try {
             String message = this.authorService.saveAuthor(author);
-            return new ResponseEntity<String>(message, HttpStatus.CREATED);
+            return new ResponseEntity<>(message, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -34,7 +34,7 @@ public class AuthorController {
     public ResponseEntity<?> findAllAlthors() {
         try {
             List<Author> authors = this.authorService.findAllAuthors();
-            return new ResponseEntity<List<Author>>(authors, HttpStatus.OK);
+            return new ResponseEntity<>(authors, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -44,7 +44,7 @@ public class AuthorController {
     public ResponseEntity<?> findAuthorById(@PathVariable Long id) {
         try {
             Author author = this.authorService.findAuthorById(id);
-            return new ResponseEntity<Author>(author, HttpStatus.OK);
+            return new ResponseEntity<>(author, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -54,7 +54,7 @@ public class AuthorController {
     public ResponseEntity<?> updateAuthor(@PathVariable Long id, @Valid @RequestBody Author author) {
         try {
             String message = this.authorService.updateAuthor(id, author);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -64,7 +64,7 @@ public class AuthorController {
     public ResponseEntity<?> deleteAuthor(@PathVariable Long id) {
         try {
             String message = this.authorService.deleteAuthor(id);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }

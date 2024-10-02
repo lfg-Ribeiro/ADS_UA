@@ -19,7 +19,7 @@ public class PublisherController {
     public ResponseEntity<?> savePublisher(@RequestBody Publisher publisher) {
         try {
             String message = this.publisherService.savePublisher(publisher);
-            return new ResponseEntity<String>(message, HttpStatus.CREATED);
+            return new ResponseEntity<>(message, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -29,7 +29,7 @@ public class PublisherController {
     public ResponseEntity<?> findAllPublishers() {
         try {
             List<Publisher> publishers = this.publisherService.findAllPublishers();
-            return new ResponseEntity<List<Publisher>>(publishers, HttpStatus.OK);
+            return new ResponseEntity<>(publishers, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -39,7 +39,7 @@ public class PublisherController {
     public ResponseEntity<?> findPublisherById(@PathVariable Long id) {
         try {
             Publisher publisher = this.publisherService.findPublisherById(id);
-            return new ResponseEntity<Publisher>(publisher, HttpStatus.OK);
+            return new ResponseEntity<>(publisher, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -49,7 +49,7 @@ public class PublisherController {
     public ResponseEntity<?> updatePublisher(@PathVariable Long id, @RequestBody Publisher publisher) {
         try {
             String message = this.publisherService.updatePublisher(id, publisher);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -59,7 +59,7 @@ public class PublisherController {
     public ResponseEntity<?> deletePublisher(@PathVariable Long id) {
         try {
             String message = this.publisherService.deletePublisher(id);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }

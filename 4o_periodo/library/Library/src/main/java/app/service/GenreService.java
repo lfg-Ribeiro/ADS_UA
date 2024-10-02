@@ -24,6 +24,7 @@ public class GenreService {
         return genres;
     }
 
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public Genre findGenreById(Long id){
         Genre genre = this.genreRepository.findById(id).get();
         return genre;

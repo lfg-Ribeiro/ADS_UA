@@ -20,7 +20,7 @@ public class SaleController {
     public ResponseEntity<?> saveSale(@Valid @RequestBody Sale sale) {
         try {
             String message = this.saleService.saveSale(sale);
-            return new ResponseEntity<String>(message, HttpStatus.CREATED);
+            return new ResponseEntity<>(message, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -30,7 +30,7 @@ public class SaleController {
     public ResponseEntity<?> findAllSales() {
         try {
             List<Sale> sales = this.saleService.findAllSales();
-            return new ResponseEntity<List<Sale>>(sales, HttpStatus.OK);
+            return new ResponseEntity<>(sales, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -40,7 +40,7 @@ public class SaleController {
     public ResponseEntity<?> findSaleById(@PathVariable Long id) {
         try {
             Sale sale = this.saleService.findSaleById(id);
-            return new ResponseEntity<Sale>(sale, HttpStatus.OK);
+            return new ResponseEntity<>(sale, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -50,7 +50,7 @@ public class SaleController {
     public ResponseEntity<?> updateSale(@PathVariable Long id, @RequestBody Sale sale) {
         try {
             String message = this.saleService.updateSale(id, sale);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -60,7 +60,7 @@ public class SaleController {
     public ResponseEntity<?> deleteSale(@PathVariable Long id) {
         try {
             String message = this.saleService.deleteSale(id);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }

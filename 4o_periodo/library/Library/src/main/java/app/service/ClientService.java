@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@SuppressWarnings("ALL")
 @Service
 public class ClientService {
     @Autowired
@@ -20,13 +21,11 @@ public class ClientService {
     }
 
     public List<Client> findAllClients(){
-        List<Client> clients = this.clientRepository.findAll();
-        return clients;
+        return this.clientRepository.findAll();
     }
 
     public Client findClientById(Long id){
-        Client client = this.clientRepository.findById(id).get();
-        return client;
+        return this.clientRepository.findById(id).get();
     }
 
     public String updateClient(Long id, Client client){

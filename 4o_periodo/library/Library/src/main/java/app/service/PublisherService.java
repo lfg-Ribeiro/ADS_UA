@@ -24,6 +24,7 @@ public class PublisherService {
         return publishers;
     }
 
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public Publisher findPublisherById(Long id){
         Publisher publisher = this.publisherRepository.findById(id).get();
         return publisher;

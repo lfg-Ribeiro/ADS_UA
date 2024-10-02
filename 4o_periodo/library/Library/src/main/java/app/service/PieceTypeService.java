@@ -24,6 +24,7 @@ public class PieceTypeService {
         return pieceTypes;
     }
 
+    @SuppressWarnings("OptionalGetWithoutIsPresent")
     public PieceType findPieceTypeById(Long id){
         PieceType pieceType = this.pieceTypeRepository.findById(id).get();
         return pieceType;

@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
+@SuppressWarnings("ALL")
 @Service
 public class SaleService {
     @Autowired

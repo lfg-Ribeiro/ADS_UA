@@ -19,7 +19,7 @@ public class GenreController {
     public ResponseEntity<?> saveGenre(@RequestBody Genre genre) {
         try {
             String message = this.genreService.saveGenre(genre);
-            return new ResponseEntity<String>(message, HttpStatus.CREATED);
+            return new ResponseEntity<>(message, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -29,7 +29,7 @@ public class GenreController {
     public ResponseEntity<?> findAllGenres() {
         try {
             List<Genre> genres = this.genreService.findAllGenres();
-            return new ResponseEntity<List<Genre>>(genres, HttpStatus.OK);
+            return new ResponseEntity<>(genres, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -39,7 +39,7 @@ public class GenreController {
     public ResponseEntity<?> findGenreById(@PathVariable Long id) {
         try {
             Genre genre = this.genreService.findGenreById(id);
-            return new ResponseEntity<Genre>(genre, HttpStatus.OK);
+            return new ResponseEntity<>(genre, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -49,7 +49,7 @@ public class GenreController {
     public ResponseEntity<?> updateGenre(@PathVariable Long id, @RequestBody Genre genre) {
         try {
             String message = this.genreService.updateGenre(id, genre);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
@@ -59,7 +59,7 @@ public class GenreController {
     public ResponseEntity<?> deleteGenre(@PathVariable Long id) {
         try {
             String message = this.genreService.deleteGenre(id);
-            return new ResponseEntity<String>(message, HttpStatus.OK);
+            return new ResponseEntity<>(message, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
