@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
+@SuppressWarnings("ALL")
 public class Voto {
 
     @Id

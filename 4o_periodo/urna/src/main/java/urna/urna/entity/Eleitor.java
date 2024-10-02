@@ -5,9 +5,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Transient;
+import lombok.Data;
+
 import java.io.Serializable;
 
+@SuppressWarnings("ALL")
 @Entity
+@Data
 public class Eleitor implements Serializable {
 
     @Id
