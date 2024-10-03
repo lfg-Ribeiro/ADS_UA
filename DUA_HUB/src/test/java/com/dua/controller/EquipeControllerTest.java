@@ -1,4 +1,7 @@
 package com.dua.controller;
+import com.dua.entity.Equipe;
+import com.dua.repository.EquipeRepository;
+import com.dua.service.EquipeService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.doThrow;
@@ -15,9 +18,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.dua.entity.Equipe;
-import com.dua.repository.EquipeRepository;
-import org.springframework.dao.EmptyResultDataAccessException;
+import jakarta.persistence.EntityNotFoundException;
 
 @SpringBootTest
 public class EquipeControllerTest {
@@ -27,6 +28,9 @@ public class EquipeControllerTest {
 
     @MockBean
     private EquipeRepository equipeRepository;
+
+    @MockBean
+    private EquipeService equipeService;
 
     @Test
     void testFindAllEquipes() {
@@ -100,10 +104,12 @@ public class EquipeControllerTest {
     void testDeleteEquipeNotFound() {
         Long id = 1L;
 
-        doThrow(new EmptyResultDataAccessException(1)).when(equipeRepository).deleteById(id);
+        // Simula que a equipe não existe
+        doThrow(new EntityNotFoundException("Equipe não encontrada com o id: " + id)).when(equipeService).deleteEquipe(id);
 
         ResponseEntity<Void> response = equipeController.deleteEquipe(id);
 
+        // Verifica se o status retornado é NOT_FOUND
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 }

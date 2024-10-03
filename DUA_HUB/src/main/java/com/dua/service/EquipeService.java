@@ -24,12 +24,11 @@ public class EquipeService {
         return equipeRepository.save(equipe);
     }
 
-    public void deleteById(Long id) {
-        try {
-            equipeRepository.deleteById(id);
-        } catch (EmptyResultDataAccessException e) {
+    public void deleteEquipe(Long id) {
+        if (!equipeRepository.existsById(id)) {
             throw new EntityNotFoundException("Equipe não encontrada com o id: " + id);
         }
+        equipeRepository.deleteById(id);
     }
 
     public Optional<Equipe> findById(Long id) {

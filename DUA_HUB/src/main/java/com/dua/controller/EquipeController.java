@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 
+import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 
 @RestController
@@ -31,8 +32,12 @@ public class EquipeController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEquipe(@PathVariable Long id) {
-        equipeService.deleteById(id);
-        return ResponseEntity.noContent().build();
+        try {
+            equipeService.deleteEquipe(id);
+            return ResponseEntity.noContent().build();
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
 
     @GetMapping("/{id}")
