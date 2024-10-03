@@ -4,6 +4,8 @@ import com.dua.entity.Equipe;
 import com.dua.service.EquipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 
 import java.util.List;
 
@@ -20,12 +22,36 @@ public class EquipeController {
     }
 
     @PostMapping
-    public Equipe createEquipe(@RequestBody Equipe equipe) {
-        return equipeService.save(equipe);
+    public ResponseEntity<Equipe> createEquipe(@RequestBody Equipe equipe) {
+        if (equipe.getNome() == null || equipe.getNome().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+        return ResponseEntity.ok(equipeService.save(equipe));
     }
 
     @DeleteMapping("/{id}")
-    public void deleteEquipe(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteEquipe(@PathVariable Long id) {
         equipeService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Equipe> getEquipeById(@PathVariable Long id) {
+        return equipeService.findById(id)
+                .map(equipe -> ResponseEntity.ok(equipe))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Equipe> updateEquipe(@PathVariable Long id, @RequestBody Equipe equipe) {
+        if (equipe.getNome() == null || equipe.getNome().isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+        return equipeService.findById(id)
+                .map(existingEquipe -> {
+                    existingEquipe.setNome(equipe.getNome());
+                    return ResponseEntity.ok(equipeService.save(existingEquipe));
+                })
+                .orElse(ResponseEntity.notFound().build());
     }
 }
