@@ -49,10 +49,11 @@ public class EquipeControllerTest {
     void testCreateEquipe() {
         Equipe novaEquipe = new Equipe(1L, "Time C");
 
+        // Simular que o repositório salva a nova equipe
         when(equipeRepository.save(novaEquipe)).thenReturn(novaEquipe);
 
-        Equipe response = equipeController.createEquipe(novaEquipe).getBody();  // Corrigido
-        assertEquals("Time C", response.getNome());
+        ResponseEntity<Equipe> response = equipeController.createEquipe(novaEquipe);
+        assertEquals("Time C", response.getBody().getNome());
     }
 
     @Test
@@ -79,6 +80,7 @@ public class EquipeControllerTest {
         Equipe equipeExistente = new Equipe(id, "Time D");
         Equipe equipeAtualizada = new Equipe(id, "Time D Atualizado");
 
+        // Simulação para retornar a equipe existente
         when(equipeRepository.findById(id)).thenReturn(Optional.of(equipeExistente));
         when(equipeRepository.save(equipeAtualizada)).thenReturn(equipeAtualizada);
 
