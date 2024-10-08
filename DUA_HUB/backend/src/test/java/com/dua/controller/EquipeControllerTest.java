@@ -63,7 +63,6 @@ public class EquipeControllerTest {
         // Simula que o repositório indica que a equipe existe
         when(equipeRepository.existsById(id)).thenReturn(true);
 
-        // Executa o método delete
         ResponseEntity<Void> response = equipeController.deleteEquipe(id);
 
         // Verifica se o status retornado é NO_CONTENT
