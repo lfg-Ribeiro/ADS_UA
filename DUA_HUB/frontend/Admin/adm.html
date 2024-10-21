@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Gerenciamento de Campeonato</title>
+    <link rel="stylesheet" href="adm.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="sidebar">
+            <!-- Adicionando o logo no topo -->
+            <div class="logo">
+                <img src="imgADM/Adm.png" alt="Logo do Site" width="200px">
+            </div>
+            <ul>
+                
+                <li><a href="#Login">Login</a></li>
+                <li><a href="#Registro">Registro</a></li>
+                <li><a href="#Inscreva-se">Inscreva-se</a></li>
+                <li><a href="#nova-competicao">Adicionar Competição</a></li>
+                <li><a href="#adicionar-equipe-campeonato">Adicionar Equipe ao Campeonato</a></li>
+                <li><a href="#nova-equipe">Adicionar Equipe</a></li>
+ 
+            </ul>
+        </nav>
+
+        <div class="content">
+        
+            <section id="nova-competicao">
+                <h1>Adicionar Competição</h1>
+                <form>
+                    <label for="nome-competicao">Nome da Competição:</label>
+                    <input type="text" id="nome-competicao" name="nome-competicao" required>
+
+                    <label for="data-inicio">Data de Início:</label>
+                    <input type="date" id="data-inicio" name="data-inicio" required>
+
+                    <label for="data-fim">Data de Fim:</label>
+                    <input type="date" id="data-fim" name="data-fim" required>
+
+                    <button type="submit">Adicionar Competição</button>
+                </form>
+            </section>
+
+            <section id="adicionar-equipe-campeonato">
+                <h1>Adicionar Equipe</h1>
+                <form>
+                    <label for="nome-equipe">Nome da Equipe:</label>
+                    <input type="text" id="nome-equipe" name="nome-equipe" required>
+
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+
+                    <button type="submit">Adicionar Equipe</button>
+                </form>
+            </section>
+
+            <section id="nova-equipe">
+                <h1>Adicionar Equipe ao Campeonato</h1>
+                <form>
+                    <label for="nome-equipe">Nome da Equipe:</label>
+                    <input type="text" id="nome-equipe" name="nome-equipe" required>
+
+                    <label for="cidade">Nome do campeonato:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+
+                    <button type="submit">Adicionar Equipe</button>
+                </form>
+            </section>
+        </div>
+        
+    </div>
+</body>
+</html>
