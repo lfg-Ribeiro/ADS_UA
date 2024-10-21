@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campeonato de Robôs</title>
+    <link rel="stylesheet" href="comp.css">
+</head>
+<body>
+
+<h1>Campeonato de Robôs</h1>
+
+<!-- Quartas de final -->
+<h2>Quartas de Final</h2>
+<table id="quartas" class="round">
+    <tr>
+        <td class="participant" onclick="vencedor('Robo Alpha', 'semis1')">Robo Alpha</td>
+        <td class="participant" onclick="vencedor('Robo Beta', 'semis1')">Robo Beta</td>
+    </tr>
+    <tr>
+        <td class="participant" onclick="vencedor('Robo Gamma', 'semis2')">Robo Gamma</td>
+        <td class="participant" onclick="vencedor('Robo Delta', 'semis2')">Robo Delta</td>
+    </tr>
+    <tr>
+        <td class="participant" onclick="vencedor('Robo Epsilon', 'semis3')">Robo Epsilon</td>
+        <td class="participant" onclick="vencedor('Robo Zeta', 'semis3')">Robo Zeta</td>
+    </tr>
+    <tr>
+        <td class="participant" onclick="vencedor('Robo Theta', 'semis4')">Robo Theta</td>
+        <td class="participant" onclick="vencedor('Robo Iota', 'semis4')">Robo Iota</td>
+    </tr>
+</table>
+
+<!-- Semifinais -->
+<h2>Semifinais</h2>
+<table id="semis" class="round">
+    <tr>
+        <td id="semis1" class="next-phase"></td>
+        <td id="semis2" class="next-phase"></td>
+    </tr>
+    <tr>
+        <td id="semis3" class="next-phase"></td>
+        <td id="semis4" class="next-phase"></td>
+    </tr>
+</table>
+
+<!-- Final -->
+<h2>Final</h2>
+<table id="final" class="round">
+    <tr>
+        <td id="final1" class="next-phase"></td>
+        <td id="final2" class="next-phase"></td>
+    </tr>
+</table>
+
+<!-- Vencedor -->
+<h2>Vencedor: <span id="vencedor"></span></h2>
+
+<script>
+    function vencedor(nome, proximaFase) {
+        // Define o vencedor da rodada e avança para a próxima fase
+        document.getElementById(proximaFase).textContent = nome;
+        
+        // Adiciona evento de clique para as semifinais e final
+        if (proximaFase.startsWith('semis')) {
+            document.getElementById(proximaFase).onclick = function() {
+                vencedor(nome, 'final' + proximaFase.slice(-1));
+            };
+        } else if (proximaFase.startsWith('final')) {
+            document.getElementById(proximaFase).onclick = function() {
+                document.getElementById('vencedor').textContent = nome;
+            };
+        }
+    }
+</script>
+
+</body>
+</html>
