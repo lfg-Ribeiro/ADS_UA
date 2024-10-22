@@ -1,7 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@fortawesome/fontawesome-free/css/all.css';
-@import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import "mdb-angular-ui-kit/assets/scss/mdb.scss";
 
-body{
-    background-color: #f2fff0;
+body {
+  background-color: #f2fff0;
+}
+
+// Variables for color scheme
+$green-mint: #e0ffe0;
+$dark-gray: #333333;
+$light-gray: #666666;
+$light-blue: #89cff0;
+$petrol-blue: #008080;
+$success-green: #2e7d32;
+$error-red: #ff6f61;
+$warning-yellow: #ffd54f;
+$white: #ffffff;
+$background-alternate: #f9f9f9;
+
+// Example of global styles
+body {
+  background-color: $green-mint;
+  color: $dark-gray;
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $dark-gray;
+}
+
+a {
+  color: $petrol-blue;
+  &:hover {
+    color: darken($petrol-blue, 10%);
+  }
+}
+
+button {
+  background-color: $petrol-blue;
+  color: $white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($petrol-blue, 10%);
+  }
+}
+
+.success-message {
+  color: $success-green;
+}
+
+.error-message {
+  color: $error-red;
+}
+
+.warning-message {
+  color: $warning-yellow;
 }
