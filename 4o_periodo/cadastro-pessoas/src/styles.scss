@@ -32,13 +32,6 @@ h4 {
   color: $dark-gray;
 }
 
-a {
-  color: $petrol-blue;
-  &:hover {
-    color: darken($petrol-blue, 10%);
-  }
-}
-
 button {
   background-color: $petrol-blue;
   color: $white;
@@ -50,16 +43,4 @@ button {
   &:hover {
     background-color: lighten($petrol-blue, 10%);
   }
-}
-
-.success-message {
-  color: $success-green;
-}
-
-.error-message {
-  color: $error-red;
-}
-
-.warning-message {
-  color: $warning-yellow;
 }
