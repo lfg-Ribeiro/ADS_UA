@@ -1,20 +1,64 @@
-<table class="minhaTabela" border="1">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Documento</th>
-            <th>E-mail</th>
-        </tr>
-    </thead>
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h3>Listagem de Pessoas</h3>
+          <div class="direita">
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-rounded"
+              mdbRipple
+              routerLink="/admin/pessoas/new"
+              rippleColor="light"
+            >
+              Novo
+            </button>
+          </div>
+          <br />
+          <table border="1" class="table table-striped">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Documento</th>
+                <th>E-mail</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
 
-    <tbody>
-
-        @for (pessoa of lista; track $index) {
-        <tr>
-            <td>{{pessoa.nome}}</td>
-            <td>{{pessoa.documento}}</td>
-            <td>{{pessoa.email}}</td>
-        </tr>
-    }
-    </tbody>
-</table>
+            <tbody>
+              @for (pessoa of lista; track $index) {
+              <tr>
+                <td>{{ pessoa.nome }}</td>
+                <td>{{ pessoa.documento }}</td>
+                <td>{{ pessoa.email }}</td>
+                <td class="direita">
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary btn-rounded"
+                    mdbRipple
+                    routerLink="/admin/pessoas/edit/{{ pessoa.id }}"
+                    rippleColor="light"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger btn-rounded"
+                    mdbRipple
+                    (click)="deletar()"
+                    rippleColor="light"
+                  >
+                    Deletar
+                  </button>
+                </td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
