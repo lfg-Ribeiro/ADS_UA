@@ -1,1 +1,40 @@
-<p>pessoasdetails works!</p>
+<br />
+<div class="container">
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4 centralizar topo">
+        <div class="card">
+          <div class="card-body">
+            <h3>Cadastro de Usuário</h3>
+            <br />
+            <mdb-form-control>
+              <input mdbInput type="text" id="usuario" class="form-control" [(ngModel)]="pessoa.nome" />
+              <label mdbLabel class="form-label" for="usuario">Usuário</label>
+            </mdb-form-control>
+            <br />
+            <mdb-form-control>
+                <input mdbInput type="text" id="usuario" class="form-control" [(ngModel)]="pessoa.documento" />
+                <label mdbLabel class="form-label" for="usuario">Documento</label>
+              </mdb-form-control>
+              <br />
+              <mdb-form-control>
+                <input mdbInput type="text" id="usuario" class="form-control" [(ngModel)]="pessoa.email" />
+                <label mdbLabel class="form-label" for="usuario">E-mail</label>
+              </mdb-form-control>
+              <br />
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-rounded"
+              mdbRipple (click)="salvar()"
+              rippleColor="dark"
+            >
+              Salvar
+            </button>
+            <br />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </div>
+  
