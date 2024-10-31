@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProvaController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DUA</a> &gt; <a href="index.source.html" class="el_package">com.dua.controller</a> &gt; <span class="el_source">ProvaController.java</span></div><h1>ProvaController.java</h1><pre class="source lang-java linenums">package com.dua.controller;
+
+import com.dua.entity.Prova;
+import com.dua.service.ProvaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/provas&quot;)
+<span class="fc" id="L14">public class ProvaController {</span>
+
+    @Autowired
+    private ProvaService provaService;
+
+    @GetMapping
+    public List&lt;Prova&gt; getAllProvas() {
+<span class="nc" id="L21">        return provaService.findAll();</span>
+    }
+
+    @PostMapping
+    public Prova createProva(@RequestBody Prova prova) {
+<span class="nc" id="L26">        return provaService.save(prova);</span>
+    }
+
+    @DeleteMapping(&quot;/{id}&quot;)
+    public void deleteProva(@PathVariable Long id) {
+<span class="nc" id="L31">        provaService.deleteById(id);</span>
+<span class="nc" id="L32">    }</span>
+    
+    @PutMapping(&quot;/{id}&quot;)
+	public ResponseEntity&lt;String&gt; update(@RequestBody Prova prova,@PathVariable Long id) {
+
+		try {
+<span class="nc" id="L38">			String message = this.provaService.update(prova, id);</span>
+<span class="nc" id="L39">			return new ResponseEntity&lt;&gt;(message, HttpStatus.OK);</span>
+<span class="nc" id="L40">		} catch (Exception e) {</span>
+<span class="nc" id="L41">			return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+		}
+	}
+    
+    @GetMapping(&quot;/findByNome&quot;)
+    public ResponseEntity&lt;List&lt;Prova&gt;&gt; findByNome(@RequestParam String nome){
+    	try {
+<span class="fc" id="L48">			List&lt;Prova&gt; list = this.provaService.findByNome(nome);</span>
+<span class="fc" id="L49">    		return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+<span class="nc" id="L50">		} catch (Exception e) {</span>
+<span class="nc" id="L51">			return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+		}
+    }
+    
+    @GetMapping(&quot;/findByLocal&quot;)
+    public ResponseEntity&lt;List&lt;Prova&gt;&gt; findByLocal(@RequestParam String local){
+    	try {
+<span class="fc" id="L58">    		List&lt;Prova&gt; list = this.provaService.findByLocal(local);</span>
+<span class="fc" id="L59">			return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+<span class="nc" id="L60">		} catch (Exception e) {</span>
+<span class="nc" id="L61">			return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+		}
+    }
+    
+    @GetMapping(&quot;/findByParticipante&quot;)
+    public ResponseEntity&lt;List&lt;Prova&gt;&gt; findByParticipantes(@RequestParam Long idParticipante){
+    	try {
+<span class="fc" id="L68">    		List&lt;Prova&gt; list = this.provaService.findByParticipantes(idParticipante);</span>
+<span class="fc" id="L69">			return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+<span class="nc" id="L70">		} catch (Exception e) {</span>
+<span class="nc" id="L71">			return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+		}
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

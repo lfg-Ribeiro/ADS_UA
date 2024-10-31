@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.dua.controller.CampeonatoControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 36.15 s -- in com.dua.controller.CampeonatoControllerTest

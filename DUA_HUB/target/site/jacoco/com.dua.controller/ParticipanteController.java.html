@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ParticipanteController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DUA</a> &gt; <a href="index.source.html" class="el_package">com.dua.controller</a> &gt; <span class="el_source">ParticipanteController.java</span></div><h1>ParticipanteController.java</h1><pre class="source lang-java linenums">package com.dua.controller;
+
+import com.dua.entity.Participante;
+import com.dua.service.ParticipanteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+    @RequestMapping(&quot;/participante&quot;)
+    @RestController
+<span class="fc" id="L14">    public class ParticipanteController {</span>
+
+        @Autowired
+        public ParticipanteService participanteService;
+
+        @PostMapping
+        public ResponseEntity&lt;String&gt; save(@RequestBody Participante participante) {
+            try {
+<span class="nc" id="L22">                String message = this.participanteService.save(participante);</span>
+<span class="nc" id="L23">                return new ResponseEntity&lt;&gt;(message, HttpStatus.OK);</span>
+<span class="fc" id="L24">            } catch (Exception e) {</span>
+<span class="fc" id="L25">                return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+            }
+        }
+
+        @PutMapping(&quot;/{id}&quot;)
+        public ResponseEntity&lt;String&gt; update(@RequestBody Participante participante, @PathVariable Long id) {
+            try {
+<span class="fc" id="L32">                String message = this.participanteService.update(participante, id);</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">                if (message.equals(&quot;Participante não encontrado!&quot;)) {</span>
+<span class="nc" id="L34">                    return new ResponseEntity&lt;&gt;(message, HttpStatus.BAD_REQUEST);</span>
+                }
+<span class="nc" id="L36">                return new ResponseEntity&lt;&gt;(message, HttpStatus.OK);</span>
+<span class="fc" id="L37">            } catch (Exception e) {</span>
+<span class="fc" id="L38">                return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+            }
+        }
+
+    @DeleteMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;String&gt; delete(@PathVariable Long id) {
+        try {
+<span class="nc" id="L45">            String message = this.participanteService.delete(id);</span>
+<span class="nc" id="L46">            return new ResponseEntity&lt;&gt;(message, HttpStatus.OK);</span>
+<span class="nc" id="L47">        } catch (Exception e) {</span>
+<span class="nc" id="L48">            return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+        }
+    }
+
+    @GetMapping
+	public ResponseEntity&lt;List&lt;Participante&gt;&gt; findAll(){
+		try {
+<span class="fc" id="L55">			List&lt;Participante&gt; list = this.participanteService.findAll();</span>
+<span class="fc" id="L56">			return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+<span class="nc" id="L57">		} catch (Exception e) {</span>
+<span class="nc" id="L58">			return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+		}
+	}
+
+	@GetMapping(&quot;/{id}&quot;)
+	public ResponseEntity&lt;Participante&gt; findById(@PathVariable Long id) {
+		try {
+<span class="nc" id="L65">			Participante participante = this.participanteService.findById(id);</span>
+<span class="nc" id="L66">			return new ResponseEntity&lt;&gt;(participante, HttpStatus.OK);</span>
+<span class="nc" id="L67">		} catch (Exception e) {</span>
+<span class="nc" id="L68">			return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+		}
+	}
+
+        @DeleteMapping(&quot;/all&quot;)
+        public ResponseEntity&lt;String&gt; deleteAll() {
+            try {
+<span class="fc" id="L75">                participanteService.deleteAll();</span>
+<span class="fc" id="L76">                return new ResponseEntity&lt;&gt;(&quot;Todos os participantes foram deletados com sucesso!&quot;, HttpStatus.OK);</span>
+<span class="nc" id="L77">            } catch (Exception e) {</span>
+<span class="nc" id="L78">                return new ResponseEntity&lt;&gt;(&quot;Erro ao deletar participantes&quot;, HttpStatus.BAD_REQUEST);</span>
+            }
+        }
+
+        @GetMapping(&quot;/findByNome&quot;)
+        public ResponseEntity&lt;List&lt;Participante&gt;&gt; findByNome(@RequestParam String nome){
+        	try {
+<span class="fc" id="L85">				List&lt;Participante&gt; list = this.participanteService.findByNome(nome);</span>
+<span class="fc" id="L86">				return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+<span class="nc" id="L87">			} catch (Exception e) {</span>
+<span class="nc" id="L88">				return new ResponseEntity&lt;&gt;(null , HttpStatus.BAD_REQUEST);</span>
+			}
+        }
+        
+        @GetMapping(&quot;/findByMatricula&quot;)
+        public ResponseEntity&lt;List&lt;Participante&gt;&gt; findByMatricula(@RequestParam String matricula){
+        	try {
+<span class="fc" id="L95">        		List&lt;Participante&gt; list = this.participanteService.findByMatricula(matricula);</span>
+<span class="fc" id="L96">				return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+<span class="nc" id="L97">			} catch (Exception e) {</span>
+<span class="nc" id="L98">				return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+			}
+        }
+        
+        @GetMapping(&quot;/findByCurso&quot;)
+        public ResponseEntity&lt;List&lt;Participante&gt;&gt; findByCurso(@RequestParam String curso){
+        	try {
+<span class="fc" id="L105">        		List&lt;Participante&gt; list = this.participanteService.findByCurso(curso);</span>
+<span class="fc" id="L106">        		return new ResponseEntity&lt;&gt;(list, HttpStatus.OK);</span>
+				
+<span class="nc" id="L108">			} catch (Exception e) {</span>
+<span class="nc" id="L109">				return new ResponseEntity&lt;&gt;(null, HttpStatus.BAD_REQUEST);</span>
+			}
+        }
+    }
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -1,0 +1,17 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+DUA,com.dua.entity,Prova,221,32,46,0,4,4,34,5,11,5
+DUA,com.dua.entity,Equipe,105,19,22,0,1,4,17,4,6,4
+DUA,com.dua.entity,Inscricao,206,29,46,0,3,3,30,8,7,8
+DUA,com.dua.entity,Participante,172,81,39,7,3,5,30,9,7,9
+DUA,com.dua.entity,Campeonato,149,18,30,0,3,3,24,3,9,3
+DUA,com.dua.service,ProvaService,32,25,2,0,9,6,5,4,4,4
+DUA,com.dua.service,InscricaoService,16,7,0,0,4,2,3,2,3,2
+DUA,com.dua.service,ParticipanteService,67,3,4,0,18,1,11,1,9,1
+DUA,com.dua.service,EquipeService,34,13,0,0,7,3,4,3,4,3
+DUA,com.dua.service,CampeonatoService,29,8,0,0,6,2,5,2,5,2
+DUA,com.dua,DuaApplication,5,3,0,0,2,1,1,1,1,1
+DUA,com.dua.controller,ParticipanteController,98,75,2,0,23,16,3,8,2,8
+DUA,com.dua.controller,ProvaController,54,36,0,0,14,7,4,4,4,4
+DUA,com.dua.controller,CampeonatoController,96,14,0,0,22,3,5,2,5,2
+DUA,com.dua.controller,EquipeController,5,33,0,2,1,9,1,6,1,5
+DUA,com.dua.controller,InscricaoController,57,10,4,0,14,3,6,2,4,2

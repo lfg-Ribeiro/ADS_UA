@@ -1,0 +1,8 @@
+com\dua\controller\CampeonatoControllerTest.class
+com\dua\DuaApplicationTests.class
+com\dua\controller\ParticipanteControllerTest.class
+com\dua\service\CampeonatoServiceTest.class
+com\dua\service\EquipeServiceTest.class
+com\dua\controller\EquipeControllerTest.class
+com\dua\controller\InscricaoControllerTest.class
+com\dua\controller\ProvaControllerTest.class

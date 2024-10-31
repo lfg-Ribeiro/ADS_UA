@@ -14,11 +14,13 @@ import Swal from 'sweetalert2';
 export class PessoaslistComponent {
   lista: Pessoa[] = [];
 
+  findAll(){
+    
+  }
+
   constructor() {
-    this.lista.push(new Pessoa(1, 'Ribeiro', '12345678900', 'ribas@ribas.com'));
-    this.lista.push(new Pessoa(2, 'Nicholas', '45678900123', 'tcholas@tcholas.com'));
-    this.lista.push(new Pessoa(3, 'Hoesel', '78900123456', 'hoesa@hoesa.com'));
-    this.lista.push(new Pessoa(4, 'Inácio', '00123456789', 'nana@nana.com'));
+
+    this.findAll();
 
     let pessoaNova = history.state.pessoaNova;
     let pessoaEditada = history.state.pessoaEditada;
