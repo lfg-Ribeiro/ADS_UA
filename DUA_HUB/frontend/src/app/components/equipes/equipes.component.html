@@ -1,1 +1,65 @@
-<p>equipes works!</p>
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h3>Listagem de Equipes</h3>
+          <div class="direita">
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-rounded"
+              mdbRipple
+              routerLink="/admin/equipes/new"
+              rippleColor="light"
+            >
+              Novo
+            </button>
+          </div>
+          <br />
+          <table border="1" class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Participantes</th>
+                <th>Projeto</th>
+              </tr>
+            </thead>
+
+            <tbody>
+             <!-- @for (equipe of lista; track $index) {
+              <tr>
+                <td>{{ equipe.id }}</td>
+                <td>{{ equipe.nome }}</td>
+                <td>{{ equipe.participantes }}</td>
+                <td>{{ equipe.projeto }}</td>
+                <td class="direita">
+                <button
+                    type="button"
+                    class="btn btn-outline-primary btn-rounded"
+                    mdbRipple
+                    routerLink=  </button>"/admin/equipes/edit/{{ equipe.id }}" 
+                    rippleColor="light"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger btn-rounded"
+                    mdbRipple
+                    (click)="deleteById(equipe)"
+                    rippleColor="light"
+                  >
+                    Deletar
+                  </button>
+                </td>
+              </tr>
+              } -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
