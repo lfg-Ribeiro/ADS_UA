@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Campeonato } from '../../models/campeonatos/campeonato';
 import Swal from 'sweetalert2';
+import { CampeonatoService } from '../../services/campeoanto.service';
 
 @Component({
   selector: 'app-campeonatos',
@@ -12,11 +13,14 @@ import Swal from 'sweetalert2';
   styleUrl: './campeonatos.component.scss',
 })
 export class CampeonatosComponent {
+  constructor (private readonly service: CampeonatoService){}
   lista: Campeonato[] = [];
 
-  findAll() {}
-
-  deleteById(campeonato: Campeonato) {
+  async findAll()  {
+  this.lista=  await this.service.obterCampeonatos()
+  }
+  
+    deleteById(campeonato: Campeonato) {
     Swal.fire({
       title: 'Tem certeza que deseja deletar o campeonato?',
       icon: 'warning',
@@ -29,6 +33,9 @@ export class CampeonatosComponent {
         let indice = this.lista.findIndex((x) => {
           return x.id == campeonato.id;
         });
+
+        this.service.deletarCampeonato(campeonato.id)
+    
         this.lista.splice(indice, 1);
 
         Swal.fire({

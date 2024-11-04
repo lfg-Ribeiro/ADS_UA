@@ -2,6 +2,9 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { environment } from '../../../environment';
+
+const urlLogin= `${environment.apiUrl}/login`
 
 @Component({
   selector: 'app-login',
@@ -17,10 +20,11 @@ export class LoginComponent {
   router = inject(Router);
 
   logar() {
-    if (this.usuario == 'admin' && this.senha == 'admin') {
-      this.router.navigate(['/admin']);
-    } else {
-      alert('Usuário ou senha inválidos');
-    }
+    try{
+      
+    }catch{}
+
+     
+    
   }
 }

@@ -1,7 +1,7 @@
 // principal.service.ts
 import { Injectable } from '@angular/core';
 import axios from 'axios';
-import { environment } from '../../environments/environment';
+import { environment } from '../environment';
 
 @Injectable({
   providedIn: 'root'
